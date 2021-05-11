@@ -4,7 +4,8 @@
   "description": "A MangaDex alternative",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,13 @@
     "web"
   ],
   "author": "Adil Atalay Hamamcioglu",
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
