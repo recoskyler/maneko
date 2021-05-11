@@ -4,7 +4,6 @@ const path         = require("path");
 const express      = require("express");
 const session      = require("express-session");
 const layouts      = require("express-ejs-layouts");
-const apiValidator = require("express-openapi-validator");
 
 // Routers
 
@@ -39,25 +38,14 @@ if (app.get('env') === 'production') {
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.set("layout", path.join(__dirname, "layouts/layout"));
+app.set("layout", "layouts/layout");
 
 app.use(layouts);
 app.use(session(sess));
 app.use(express.json());
+app.use(express.text());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
-app.use(apiValidator.middleware({
-    apiSpec: './api.yaml',
-    validateRequests: true,
-    validateResponses: true
-}));
-
-app.use((err, req, res, next) => {
-    res.status(err.status || 500).json({
-        message: err.message,
-        errors: err.errors,
-    });
-});
 
 // Routes
 
