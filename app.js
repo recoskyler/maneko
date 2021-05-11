@@ -1,13 +1,19 @@
 // Requirements
 
-const express = require("express");
-const layouts = require("express-ejs-layouts");
 const path    = require("path");
+const express = require("express");
 const session = require("express-session");
+const layouts = require("express-ejs-layouts");
 
 // Routers
 
-const indexRouter = require("./routes/index");
+const indexRouter    = require("./routes/index");
+const loginRouter    = require("./routes/login");
+const mangaRouter    = require("./routes/manga");
+const authorRouter   = require("./routes/author");
+const searchRouter   = require("./routes/search");
+const profileRouter  = require("./routes/profile");
+const registerRouter = require("./routes/register");
 
 // Constants
 
@@ -36,9 +42,19 @@ app.set("layout", path.join(__dirname, "layouts/layout"));
 
 app.use(layouts);
 app.use(session(sess));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+
+// Routes
+
+app.use("/", indexRouter);
+app.use("/login", loginRouter);
+app.use("/manga", mangaRouter);
+app.use("/author", authorRouter);
+app.use("/search", searchRouter);
+app.use("/profile", profileRouter);
+app.use("/register", registerRouter);
 
 /////
 
