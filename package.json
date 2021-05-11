@@ -1,0 +1,24 @@
+{
+  "name": "mangarex",
+  "version": "0.0.1",
+  "description": "A MangaDex alternative",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/recoskyler/mangarex"
+  },
+  "keywords": [
+    "manga",
+    "anime",
+    "mangadex",
+    "mangarex",
+    "read",
+    "japanese",
+    "web"
+  ],
+  "author": "Adil Atalay Hamamcioglu",
+  "license": "SEE LICENSE IN LICENSE"
+}
