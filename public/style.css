@@ -24,12 +24,19 @@
     --read-status-bg: var(--dark);
     --unread-status-icon: var(--gray);
     --unread-status-bg: var(--dark);
+    --error-bg: var(--excluded-tag-bg);
+    --error-text: var(--red);
+    --content-bg: hsl(0, 0%, 98%);
+
+    --border-rad: 0.3rem;
 }
 
 html, body {
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    min-height: 100vh;
 }
 
 h1 {
@@ -82,4 +89,41 @@ a {
     font-weight: 500;
     text-decoration: none;
     color: var(--link-color);
+}
+
+.error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    display: flex;
+    justify-content: stretch;
+    align-items: flex-start;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: var(--border-rad);
+}
+
+.error strong {
+    padding-right: 1.5em;
+}
+
+.followButton {
+    width: auto;
+    height: 2rem;
+}
+
+#mainCont {
+    display: flex;
+    position: static;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#content {
+    display: block;
+    height: 100%;
+    width: clamp(45ch, 60%, 75ch);
+    background-color: var(--content-bg);
+    padding: 1rem 2rem;
 }
