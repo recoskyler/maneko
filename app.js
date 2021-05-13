@@ -3,6 +3,7 @@
 const path         = require("path");
 const express      = require("express");
 const cookieParser = require('cookie-parser');
+const dotenv       = require('dotenv').config();
 const session      = require("express-session");
 const layouts      = require("express-ejs-layouts");
 
@@ -18,17 +19,15 @@ const registerRouter = require("./routes/register");
 
 // Constants
 
-const port = 3000;
-const app  = express();
-const sess = {
-    secret: 'mikudex42069',
+const port   = 3000;
+const secret = "mikudex42069";
+const app    = express();
+const sess   = {
+    secret: process.env.SECRET || secret,
     resave: false,
     saveUninitialized: true,
     cookie: { secure: true }
 };
-
-// Variables
-
 
 // App setup
 
