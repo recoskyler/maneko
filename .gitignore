@@ -156,3 +156,4 @@ temp/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,git
+.vscode/settings.json
