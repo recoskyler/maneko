@@ -35,6 +35,7 @@ const sess = {
 if (app.get('env') === 'production') {
     app.set("trust proxy", 1)
     sess.cookie.secure = true;
+    sess.cookie.httpOnly = true;
 }
 
 app.set("view engine", "ejs");
