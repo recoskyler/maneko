@@ -1,3 +1,7 @@
+<% if (typeof error === "string") { %>
+    <%- include("./partials/error.ejs", { error: error }) %>
+<% } %>
+
 <% list?.forEach(manga => { %>
     <h4><%- manga.data.attributes.title.en %> </h4>
 <% }) %>

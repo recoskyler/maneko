@@ -1,0 +1,11 @@
+<% if (typeof error === "string") { %>
+    <%- include("./partials/error.ejs", { error: error }) %>
+<% } %>
+
+<form action="/login" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" name="username" id="usernameInput" required maxlength="64" minlength="1"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" name="password" id="passwordInput" required maxlength="1024" minlength="4"><br>
+    <input type="submit" value="Login">
+</form>
