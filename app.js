@@ -2,6 +2,7 @@
 
 const path         = require("path");
 const express      = require("express");
+const cookieParser = require('cookie-parser');
 const session      = require("express-session");
 const layouts      = require("express-ejs-layouts");
 
@@ -44,8 +45,9 @@ app.use(layouts);
 app.use(session(sess));
 app.use(express.json());
 app.use(express.text());
-app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 
