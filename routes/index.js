@@ -4,11 +4,9 @@ const express = require("express");
 const axios   = require("axios").default;
 const router  = express.Router();
 
-// Constants
+/////
 
 const BASE_URL = "https://api.mangadex.org";
-
-/////
 
 router.get("/", (req, res) => {
     axios.get("/manga", {
@@ -20,7 +18,7 @@ router.get("/", (req, res) => {
         res.render("index", { list: response.data.results });
     }).catch((err) => {
         console.error(err);
-        res.render("index", { error: "An error occurred : " + err });
+        res.render("index", { error: err });
     });
 });
 
