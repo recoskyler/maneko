@@ -26,7 +26,10 @@ const sess   = {
     secret: process.env.SECRET || secret,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    cookie: { 
+        secure: false,
+        httpOnly: false
+    }
 };
 
 // App setup
@@ -43,10 +46,10 @@ app.set("layout", "layouts/layout");
 
 app.use(layouts);
 app.use(session(sess));
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
