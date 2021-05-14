@@ -1,9 +1,9 @@
-<%- include("./partials/header.ejs"); %> 
+<% if (typeof username === "string") { %>
+    <%- include("./partials/header.ejs", { username: username }); %> 
+<% } else { %>
+    <%- include("./partials/header.ejs", { username: "Login" }); %> 
+<% } %>
 
 <% if (typeof error === "string") { %>
     <%- include("./partials/error.ejs", { error: error }) %>
 <% } %>
-
-<% list?.forEach(manga => { %>
-    <h4><%- manga.data.attributes.title.en %> </h4>
-<% }) %>

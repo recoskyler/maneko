@@ -50,12 +50,12 @@ h2 {
 }
 
 h3 {
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: 700;
 }
 
 h4 {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 700;
 }
 
@@ -123,7 +123,21 @@ a {
 #content {
     display: block;
     height: 100%;
-    width: clamp(45ch, 60%, 75ch);
+    width: clamp(45ch, 70%, 100%);
     background-color: var(--content-bg);
-    padding: 1rem 2rem;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    padding: 1rem;
+    width: auto;
+    gap: 2rem;
+}
+
+#loginButton {
+    margin-left: auto;
 }
