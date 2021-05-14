@@ -8,7 +8,7 @@ Currently under development while reading lots of manga and listening to [synthw
 
 ## Designs
 
-The designs were made in [Figma](https://www.figma.com), you can view the designs of this project [here](https://www.figma.com/file/aciJXrn4aX2jtNvxNe0X1q/MangaRex).
+The designs were made in [Figma](https://www.figma.com), you can view the designs of this project [here](https://www.figma.com/file/aciJXrn4aX2jtNvxNe0X1q/MangaRex). I'm welcome to any suggestions, as I'm hopeless at UI/UX design :/ Feel free to contact me [here](mailto:recoskyler224@gmail.com).
 
 ## [License](https://github.com/recoskyler/mangarex/blob/main/LICENSE)
 
