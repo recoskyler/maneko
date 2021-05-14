@@ -27,7 +27,7 @@ async function isAuthenticated(req) {
 
     if (typeof req.session.session !== "string") {
         console.log("Not already authenticated");
-        
+
         req.session.user = undefined;
         req.session.refresh = undefined;
 
@@ -83,21 +83,15 @@ async function getAuthenticatedUserDetails(req) {
         if (response.status === 200) {
             console.log(`Got authenticated user ${response.data.data.attributes.username}`);
 
-            req.session.username = response.data.data.attributes.username;
-
             return {
                 uuid: response.data.id,
                 username: response.data.data.attributes.username,
             };
         }
-
-        req.session.username = undefined;
     
         console.error(`An error occurred while getting authenticated user : STATUS CODE ${response.status}`)
         return {};
-    } catch (error) {
-        req.session.username = undefined;
-        
+    } catch (error) {        
         console.error(`An error occurred while getting authenticated user : ${error}`)
         return {};
     }
