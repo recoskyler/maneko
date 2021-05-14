@@ -138,6 +138,6 @@ nav {
     gap: 2rem;
 }
 
-#loginButton {
+.justifyRight {
     margin-left: auto;
 }
