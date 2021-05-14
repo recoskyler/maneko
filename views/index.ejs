@@ -1,7 +1,7 @@
 <% if (typeof username === "string") { %>
     <%- include("./partials/header.ejs", { username: username }); %> 
 <% } else { %>
-    <%- include("./partials/header.ejs", { username: "Login" }); %> 
+    <%- include("./partials/header.ejs", { username: null }); %> 
 <% } %>
 
 <% if (typeof error === "string") { %>

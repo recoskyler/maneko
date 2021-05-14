@@ -32,7 +32,11 @@ function login(req, res, username, password) {
 /////
 
 router.get("/", async (req, res) => {
-    if (await toolbox.isAuthenticated(req)) {
+    const authStatus = await toolbox.isAuthenticated(req);
+
+    console.log(authStatus ? "Redirecting to profile" : "Rendering login");
+
+    if (authStatus) {
         res.redirect("/profile");
     } else {
         res.render("login");
@@ -42,8 +46,11 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
+    const authStatus = await toolbox.isAuthenticated(req);
 
-    if (await toolbox.isAuthenticated(req)) {
+    console.log(authStatus ? "Redirecting to profile" : "Logging in");
+
+    if (authStatus) {
         res.redirect("/profile");
     } else {
         login(req, res, username, password);

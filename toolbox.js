@@ -60,7 +60,7 @@ async function isAuthenticated(req) {
  * @returns User object with the keys uuid and username, empty object on error/unauthenticated request
  */
 async function getAuthenticatedUserDetails(req) {
-    if (!isAuthenticated(req)) {
+    if (!(await isAuthenticated(req))) {
         console.error("Can't get authenticated user while not authenticated, duh");
         return {};
     }
@@ -103,7 +103,7 @@ async function getUserDetails(req, uuid) {
         return {};
     }
 
-    if (!isAuthenticated(req)) {
+    if (!(await isAuthenticated(req))) {
         console.error("Can't get user while not authenticated");
         return {};
     }

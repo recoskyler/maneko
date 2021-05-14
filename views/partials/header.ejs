@@ -16,8 +16,14 @@
             <h4>Authors</h4>
         </a>
 
-        <a id="loginButton" href="/login">
-            <h4><%- username %> </h4>
-        </a>
+        <% if (typeof username === "string") { %>
+            <a id="username" class="justifyRight" href="/profile">
+                <h4><%- username %> </h4>
+            </a>
+        <% } else { %>
+            <a id="loginButton" class="justifyRight" href="/login">
+                <h4>Login</h4>
+            </a>
+        <% } %>
     </nav>
 </header>
