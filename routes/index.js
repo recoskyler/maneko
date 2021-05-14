@@ -1,25 +1,16 @@
 // Requirements
 
+const toolbox = require("../toolbox");
 const express = require("express");
 const axios   = require("axios").default;
 const router  = express.Router();
 
 /////
 
-const BASE_URL = "https://api.mangadex.org";
+router.get("/", async (req, res) => {
+    const username = (await toolbox.getAuthenticatedUserDetails(req))?.username || undefined;
 
-router.get("/", (req, res) => {
-    axios.get("/manga", {
-        baseURL: BASE_URL,
-        params: {
-            limit: 20
-        }
-    }).then((response) => {
-        res.render("index", { list: response.data.results });
-    }).catch((err) => {
-        console.error(err);
-        res.render("index", { error: err });
-    });
+    res.render("index", { username: username })
 });
 
 module.exports = router;
