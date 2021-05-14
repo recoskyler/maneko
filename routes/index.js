@@ -8,9 +8,7 @@ const router  = express.Router();
 /////
 
 router.get("/", async (req, res) => {
-    var username = req.session.user?.username;
-
-    res.render("index", { username: username })
+    res.render("index", { username: req.session.user?.username })
 });
 
 module.exports = router;
