@@ -8,9 +8,7 @@ const router  = express.Router();
 /////
 
 router.get("/", async (req, res) => {
-    const username = null;
-
-    if (await toolbox.isAuthenticated(req)) username = (await toolbox.getAuthenticatedUserDetails(req))?.username || null;
+    var username = req.session.user?.username;
 
     res.render("index", { username: username })
 });
