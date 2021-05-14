@@ -13,6 +13,7 @@ const indexRouter    = require("./routes/index");
 const loginRouter    = require("./routes/login");
 const mangaRouter    = require("./routes/manga");
 const searchRouter   = require("./routes/search");
+const followsRouter  = require("./routes/follows");
 const profileRouter  = require("./routes/profile");
 const authorsRouter  = require("./routes/authors");
 const registerRouter = require("./routes/register");
@@ -59,6 +60,7 @@ app.use("/login", loginRouter);
 app.use("/manga", mangaRouter);
 app.use("/search", searchRouter);
 app.use("/authors", authorsRouter);
+app.use("/follows", followsRouter);
 app.use("/profile", profileRouter);
 app.use("/register", registerRouter);
 
