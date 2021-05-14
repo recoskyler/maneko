@@ -1,11 +1,17 @@
-<% if (typeof error === "string") { %>
-    <%- include("./partials/error.ejs", { error: error }) %>
-<% } %>
+<%- include("./partials/header.ejs", { username: null }); %>
 
-<form action="/login" method="post">
-    <label for="username">Username:</label><br>
-    <input type="text" name="username" id="usernameInput" required maxlength="64" minlength="1"><br>
-    <label for="password">Password:</label><br>
-    <input type="password" name="password" id="passwordInput" required maxlength="1024" minlength="4"><br>
-    <input type="submit" value="Login">
-</form>
+<div class="pageContent">
+    <h2>Login</h2>
+    
+    <% if (typeof error === "string") { %>
+        <%- include("./partials/error.ejs", { error: error }) %>
+    <% } %>
+    
+    <form action="/login" method="post" id="loginForm">
+        <div><label for="username">Username:</label></div>
+        <div><input type="text" name="username" id="usernameInput" required maxlength="64" minlength="1"></div>
+        <div><label for="password">Password:</label></div>
+        <div><input type="password" name="password" id="passwordInput" required maxlength="1024" minlength="4"></div>
+        <div><input class="button" type="submit" value="Login"></div>
+    </form>
+</div>

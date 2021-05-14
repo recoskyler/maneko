@@ -1,0 +1,13 @@
+<% if (typeof username === "string") { %>
+    <%- include("./partials/header.ejs", { username: username }); %> 
+<% } else { %>
+    <%- include("./partials/header.ejs", { username: null }); %> 
+<% } %>
+
+<div class="pageContent">
+    <h2>Manga</h2>
+    
+    <% if (typeof error === "string") { %>
+        <%- include("./partials/error.ejs", { error: error }) %>
+    <% } %>
+</div>

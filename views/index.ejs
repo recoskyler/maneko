@@ -4,6 +4,10 @@
     <%- include("./partials/header.ejs", { username: null }); %> 
 <% } %>
 
-<% if (typeof error === "string") { %>
-    <%- include("./partials/error.ejs", { error: error }) %>
-<% } %>
+<div class="pageContent">
+    <h2>Home</h2>
+    
+    <% if (typeof error === "string") { %>
+        <%- include("./partials/error.ejs", { error: error }) %>
+    <% } %>
+</div>
