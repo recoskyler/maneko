@@ -6,6 +6,14 @@
     <% if (typeof error === "string") { %>
         <%- include("./partials/error.ejs", { error: error }) %>
     <% } %>
+
+    <% if (typeof warning === "string") { %>
+        <%- include("./partials/warning.ejs", { warning: warning }) %>
+    <% } %>
+
+    <% if (typeof info === "string") { %>
+        <%- include("./partials/info.ejs", { info: info }) %>
+    <% } %>
     
     <form action="/login" method="post" id="loginForm">
         <div><label for="username">Username:</label></div>

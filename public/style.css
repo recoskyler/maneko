@@ -1,34 +1,51 @@
 :root {
     --red: hsl(340, 100%, 50%);
-    --blue: hsl(188, 72%, 36%);
+    --orange: hsl(0, 92%, 66%);
+    --blue: hsl(230, 87%, 59%);
     --dark: hsl(338, 15%, 15%);
     --light: hsl(330, 20%, 98%);
     --gray: hsl(0, 0%, 70%);
+
+    --transparent-red: hsla(340, 100%, 50%, 0.25);
+    --transparent-orange: hsl(0, 92%, 66%, 0.25);
+    --transparent-blue: hsla(230, 87%, 59%, 0.25);
+    
     --light-bg: hsl(0, 100%, 100%);
     --dark-bg: hsl(0, 0%, 0%);
-    --link-color: var(--blue);
+    --content-bg: hsl(0, 0%, 95%);
+    
     --tag-text: var(--blue);
-    --tag-bg: hsla(188, 72%, 36%, 0.5);
+    --tag-bg: var(--transparent-blue);
+    
     --excluded-tag-text: var(--red);
-    --excluded-tag-bg: hsla(340, 100%, 50%, 0.4);
+    --excluded-tag-bg: var(--transparent-red);
     --included-tag-text: var(--tag-text);
     --included-tag-bg: var(--tag-bg);
+    
+    --link-color: var(--blue);
     --dark-text: var(--dark);
     --light-text: var(--light);
+    
+    --button-bg: var(--read-status-bg);
+    --button-text: var(--light-text);
+
     --follow-bg: var(--red);
     --follow-text: var(--light);
     --unfollow-bg: transparent;
     --unfollow-text: var(--red);
     --unfollow-border: var(--red);
+
     --read-status-icon: var(--blue);
     --read-status-bg: var(--dark);
     --unread-status-icon: var(--gray);
     --unread-status-bg: var(--dark);
-    --error-bg: var(--excluded-tag-bg);
+
+    --info-bg: var(--transparent-blue);
+    --info-text: var(--blue);
+    --error-bg: var(--transparent-red);
     --error-text: var(--red);
-    --content-bg: hsl(0, 0%, 95%);
-    --button-bg: var(--read-status-bg);
-    --button-text: var(--light-text);
+    --warning-bg: var(--transparent-orange);
+    --warning-text: var(--orange);
 
     --border-rad: 0.3rem;
     --horizontal-padding: 2rem;
@@ -103,6 +120,19 @@ a {
 .error {
     background-color: var(--error-bg);
     color: var(--error-text);
+}
+
+.info {
+    background-color: var(--info-bg);
+    color: var(--info-text);
+}
+
+.warning {
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+}
+
+.error, .warning, .info {
     display: flex;
     justify-content: stretch;
     align-items: flex-start;
@@ -111,7 +141,7 @@ a {
     border-radius: var(--border-rad);
 }
 
-.error strong {
+.error strong, .warning strong, .info strong {
     padding-right: 1.5em;
 }
 
@@ -217,4 +247,11 @@ label {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    padding: 0.5rem 1rem 0.5rem 0;
+    border-bottom: 1px solid hsl(0, 0%, 50%, 0.5);
+}
+
+.inlineTitle {
+    font-weight: 500;
+    width: 50ch;
 }

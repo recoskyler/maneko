@@ -5,7 +5,7 @@
 <% } %>
 
 <div class="pageContent">
-    <h2>Manga</h2>
+    <h2>Follows</h2>
     
     <% if (typeof error === "string") { %>
         <%- include("./partials/error.ejs", { error: error }) %>
@@ -18,4 +18,11 @@
     <% if (typeof info === "string") { %>
         <%- include("./partials/info.ejs", { info: info }) %>
     <% } %>
+
+    <% list.forEach(chapter => { %>
+        <div class="chapter">
+            <span class="inlineTitle"><%- chapter.manga %></span>
+            <span class="inlineChapter"><%- chapter.title || `Chapter ${chapter.chapter}` %></span>
+        </div>
+    <% }) %>
 </div>
