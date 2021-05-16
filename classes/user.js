@@ -37,6 +37,10 @@ class User {
                         params: {
                             limit: 100,
                             offset: 100 * reqCount,
+                            order: {
+                                chapter: "desc",
+                                volume: "desc",
+                            }
                         }
                     }
                 );
@@ -63,8 +67,6 @@ class User {
                             m.data.attributes.createdAt,
                             m.data.attributes.updatedAt
                         );
-
-                        console.log(JSON.stringify(`${manga.title?.en || manga.title?.ja || manga.title?.ko || manga.title?.zh}`));
 
                         if (this.mangaFollows.hasOwnProperty(manga.uuid)) {
                             cont = false;
