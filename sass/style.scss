@@ -1,0 +1,258 @@
+$border-rad: 0.3rem;
+$horizontal-padding: 2rem;
+$vertical-padding: 1rem;
+$semi-transparent-opacity: 0.25;
+
+$red: hsl(340, 100%, 50%);
+$orange: hsl(0, 92%, 66%);
+$blue: hsl(230, 87%, 59%);
+$dark: hsl(338, 15%, 15%);
+$light: hsl(330, 20%, 98%);
+$gray: hsl(0, 0%, 70%);
+
+$transparent-red: opacify($red, $semi-transparent-opacity);
+$transparent-orange: opacify($orange, $semi-transparent-opacity);
+$transparent-blue: opacify($blue, $semi-transparent-opacity);
+
+$light-bg: hsl(0, 100%, 100%);
+$dark-bg: hsl(0, 0%, 0%);
+$content-bg: hsl(0, 0%, 95%);
+
+$tag-text: $blue;
+$tag-bg: $transparent-blue;
+
+$excluded-tag-text: $red;
+$excluded-tag-bg: $transparent-red;
+$included-tag-text: $tag-text;
+$included-tag-bg: $tag-bg;
+
+$link-text: $blue;
+$dark-text: $dark;
+$light-text: $light;
+
+$button-bg: $dark;
+$button-text: $light-text;
+
+$follow-bg: $red;
+$follow-text: $light;
+$unfollow-bg: transparent;
+$unfollow-text: $red;
+$unfollow-border: $red;
+
+$read-status-icon: $blue;
+$read-status-bg: $dark;
+$unread-status-icon: $gray;
+$unread-status-bg: $dark;
+
+$info-bg: $transparent-blue;
+$info-text: $blue;
+
+$error-bg: $transparent-red;
+$error-text: $red;
+
+$warning-bg: $transparent-orange;
+$warning-text: $orange;
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.altName {
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.description {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.chapterTitle {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+a {
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: $link-text;
+}
+
+.error {
+    background-color: $error-bg;
+    color: $error-text;
+}
+
+.info {
+    background-color: $info-bg;
+    color: $info-text;
+}
+
+.warning {
+    background-color: $warning-bg;
+    color: $warning-text;
+}
+
+.error, .warning, .info {
+    display: flex;
+    justify-content: stretch;
+    align-items: flex-start;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: $border-rad;
+
+    strong {
+        padding-right: 1.5rem;
+    }
+}
+
+#mainCont {
+    display: flex;
+    position: static;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#content {
+    display: block;
+    height: auto;
+    width: clamp(45ch, 70%, 100%);
+    background-color: $content-bg;
+    padding: $vertical-padding 0;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    padding: $vertical-padding $horizontal-padding;
+    width: auto;
+    gap: 2rem;
+    border-bottom: 1px solid hsl(0, 0%, 50%, 0.5);
+    margin: 0 0 $vertical-padding 0;
+}
+
+.justifyRight {
+    margin-left: auto;
+}
+
+#loginForm {
+    display: flex;
+    margin: $vertical-padding 0;
+    width: 25ch;
+    height: auto;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    gap: 1rem;
+    user-select: none;
+
+    div {
+        display: flex;
+        justify-content: stretch;
+        width: 100%;
+    }
+
+    input[type=text], input[type=password] {
+        padding: 0.6rem 1rem;
+        margin: 0;
+        height: auto;
+        width: 100%;
+        outline: none;
+        border: none;
+        background-color: $gray;
+        border-radius: $border-rad;
+        color: $dark-text;
+        font-weight: 400;
+        font-size: 1em;
+    }
+}
+
+.button {
+    display: flex;
+    padding: 0.7rem 1rem;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: $button-bg;
+    border-radius: $border-rad;
+    color: $button-text;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+label {
+    font-weight: 500;
+}
+
+#pageTitle {
+    font-weight: 400 !important;
+}
+
+.pageContent {
+    padding: $vertical-padding $horizontal-padding;
+}
+
+.chapter {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.5rem 1rem 0.5rem 0;
+    border-bottom: 1px solid hsl(0, 0%, 50%, 0.5);
+}
+
+.inlineTitle {
+    font-weight: 500;
+    width: 50ch;
+}
