@@ -7,11 +7,9 @@ const router  = express.Router();
 /////
 
 router.get("/", async (req, res) => {
-    var username = null;
-
-    if (await toolbox.isAuthenticated(req)) username = (await toolbox.getAuthenticatedUserDetails(req))?.username || null;
-
-    res.render("profile", { username: username })
+    if (!(await toolbox.isAuthenticated(req))) return res.redirect("/login");
+    
+    res.render("profile", { username: req.session.user?.username })
 });
 
 module.exports = router;
