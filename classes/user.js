@@ -82,6 +82,7 @@ class User {
                 }
             } catch (error) {
                 console.error(`An error occurred while getting manga follow list : ${error}`);
+                return;
             }
         } while (response.status === 200);
 
@@ -107,6 +108,7 @@ class User {
             }
         } catch (error) {
             console.error(`An error occurred while getting manga follow reading statuses : ${error}`);
+            return;
         }
 
         console.log(`You are following ${Object.keys(this.mangaFollows).length} manga`);
