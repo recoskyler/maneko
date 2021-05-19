@@ -4,9 +4,21 @@
 
 const axios   = require("axios").default;
 
+// Enums
+
+const ListStyle = {
+    Grouped: "grouped",
+    Tiles: "tiles",
+} 
+
 // Constants
 
-const BASE_URL = process.env.BASE_URL || "https://api.mangadex.org";
+const BASE_URL       = process.env.BASE_URL || "https://api.mangadex.org";
+const DEFAULT_CONFIG = {
+    follows: {
+        listStyle: ListStyle.Grouped
+    },
+};
 
 // Functions
 
@@ -148,4 +160,4 @@ async function getUserDetails(req, uuid) {
  */
 let sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-module.exports = { isDefined, isAuthenticated, BASE_URL, getAuthenticatedUserDetails, getUserDetails, sleep };
+module.exports = { isDefined, isAuthenticated, BASE_URL, DEFAULT_CONFIG, ListStyle, getAuthenticatedUserDetails, getUserDetails, sleep };
