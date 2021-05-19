@@ -20,6 +20,7 @@ async function login(req, res, username, password) {
         if (response.status === 200 && response.data.result === "ok") {
             req.session.session = response.data.token.session;
             req.session.refresh = response.data.token.refresh;
+            req.session.config  = toolbox.DEFAULT_CONFIG;
 
             const userDetails = await toolbox.getAuthenticatedUserDetails(req);
 
