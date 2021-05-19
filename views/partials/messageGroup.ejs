@@ -1,0 +1,23 @@
+<% if (Object.prototype.toString.call(error) === "[object String]") { %>
+    <%- include("./message.ejs", { type: "error", message: error }) %>
+<% } else if (Object.prototype.toString.call(error) === "[object Array]") { %>
+    <% error.forEach(msg => { %>
+        <%- include("./message.ejs", { type: "error", message: msg }) %>
+    <% }) %>
+<% } %>
+
+<% if (Object.prototype.toString.call(warning) === "[object String]") { %>
+    <%- include("./message.ejs", { type: "warning", message: warning }) %>
+<% } else if (Object.prototype.toString.call(warning) === "[object Array]") { %>
+    <% warning.forEach(msg => { %>
+        <%- include("./message.ejs", { type: "warning", message: msg }) %>
+    <% }) %>
+<% } %>
+
+<% if (Object.prototype.toString.call(info) === "[object String]") { %>
+    <%- include("./message.ejs", { type: "info", message: info }) %>
+<% } else if (Object.prototype.toString.call(info) === "[object Array]") { %>
+    <% info.forEach(msg => { %>
+        <%- include("./message.ejs", { type: "info", message: msg }) %>
+    <% }) %>
+<% } %>

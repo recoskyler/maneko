@@ -7,17 +7,7 @@
 <div class="pageContent">
     <h2>Follows</h2>
     
-    <% if (typeof error === "string") { %>
-        <%- include("./partials/error.ejs", { error: error }) %>
-    <% } %>
-
-    <% if (typeof warning === "string") { %>
-        <%- include("./partials/warning.ejs", { warning: warning }) %>
-    <% } %>
-
-    <% if (typeof info === "string") { %>
-        <%- include("./partials/info.ejs", { info: info }) %>
-    <% } %>
+    <%- include("./partials/messageGroup.ejs", { error: (!!error) ? error : null, warning: (!!warning) ? warning : null, info: (!!info) ? info : null }) %>
 
     <% list.forEach(chapter => { %>
         <div class="chapter">
