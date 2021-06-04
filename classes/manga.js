@@ -1,5 +1,5 @@
 class Manga {
-    constructor(uuid, title, altTitles, description, isLocked, originalLanguage, lastVolume, lastChapter, publicationDemographic, status, year, contentRating, tags, version, createdAt, updatedAt, author = {}, group = {}, readingStatus = "") {
+    constructor(uuid, title, altTitles, description, isLocked, originalLanguage, lastVolume, lastChapter, publicationDemographic, status, year, contentRating, tags, version, createdAt, updatedAt, author = {}, group = {}, readingStatus = "", cover = "") {
         this.uuid                   = (typeof uuid === "string") ? uuid : "";
         this.title                  = (typeof title === "object") ? title : "";
         this.altTitles              = (typeof altTitles === "object") ? altTitles : {};
@@ -19,6 +19,7 @@ class Manga {
         this.author                 = (typeof author === "object") ? author : {};
         this.group                  = (typeof group === "object") ? group : {};
         this.readingStatus          = (typeof readingStatus === "string") ? readingStatus : "";
+        this.cover                  = (typeof cover === "string") ? cover : "";
     }
 }
 
