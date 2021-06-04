@@ -3,7 +3,7 @@
 <div class="pageContent">
     <h2>Login</h2>
     
-    <%- include("./partials/messageGroup.ejs", { error: (!!error) ? error : null, warning: (!!warning) ? warning : null, info: (!!info) ? info : null }) %>
+    <%- include("./partials/messageGroup.ejs", { error: (typeof error !== "undefined") ? error : null, warning: (typeof warning !== "undefined") ? warning : null, info: (typeof info !== "undefined") ? info : null }) %>
     
     <form action="/login" method="post" id="loginForm">
         <div><label for="username">Username:</label></div>

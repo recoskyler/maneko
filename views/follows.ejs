@@ -7,12 +7,27 @@
 <div class="pageContent">
     <h2>Follows</h2>
     
-    <%- include("./partials/messageGroup.ejs", { error: (!!error) ? error : null, warning: (!!warning) ? warning : null, info: (!!info) ? info : null }) %>
+    <%- include("./partials/messageGroup.ejs", { error: (typeof error !== "undefined") ? error : null, warning: (typeof warning !== "undefined") ? warning : null, info: (typeof info !== "undefined") ? info : null }) %>
 
-    <% list.forEach(chapter => { %>
-        <div class="chapter">
-            <span class="inlineTitle"><%- chapter.manga %></span>
-            <span class="inlineChapter"><%- chapter.title || `Chapter ${chapter.chapter}` %></span>
-        </div>
-    <% }) %>
+    <% if (Object.prototype.toString.call(list) === "[object Array]") { %>
+        <% list.forEach(chapter => { %>
+            <div class="chapter">
+                <a href="/manga/<%- chapter.mangaId %>" class="mangaLink">
+                    <span class="inlineTitle"><%- chapter.manga %></span>
+                </a>
+
+                <a href="/manga/chapter/<%- chapter.id %>" class="chapterLink">
+                    <span class="inlineChapter"><%- chapter.title || `Chapter ${chapter.chapter}` %></span>
+                </a>
+            </div>
+        <% }) %>
+    <% } else if () { %>
+        <% Object.keys(list).forEach(key => { %>
+            <div class="groupContainer">
+                <div class="coverPanel">
+                    <img src="" alt="<%- list[key][0]. %> ">
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
 </div>

@@ -7,5 +7,5 @@
 <div class="pageContent">
     <h2>Manga</h2>
     
-    <%- include("./partials/messageGroup.ejs", { error: (!!error) ? error : null, warning: (!!warning) ? warning : null, info: (!!info) ? info : null }) %>
+    <%- include("./partials/messageGroup.ejs", { error: (typeof error !== "undefined") ? error : null, warning: (typeof warning !== "undefined") ? warning : null, info: (typeof info !== "undefined") ? info : null }) %>
 </div>
