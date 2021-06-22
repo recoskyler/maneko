@@ -4,7 +4,7 @@ A MangaDex alternative to read manga from while MangaDex is under recovery. This
 
 ## Status
 
-Currently ~~under development while reading lots of manga and listening to [synthwave playlist](https://open.spotify.com/playlist/163x2txK7w1r9QOIlB5LRF?si=f5bff499c75d4d0e)~~ on hold because of other projects. As I'm developing this as a side-hobby-project, this might take some time. Let's hope I don't lose my motivation this time and leave this one as well.
+Currently ~~under development while reading lots of manga and listening to [synthwave playlist](https://open.spotify.com/playlist/163x2txK7w1r9QOIlB5LRF?si=f5bff499c75d4d0e)~~ ~~on hold~~ discontinued because MangaDex released their early access version, which was the design I was imagining ~~of other projects~~. As I'm developing this as a side-hobby-project, this might take some time. Let's hope I don't lose my motivation this time and leave this one as well.
 
 ## Designs
 
